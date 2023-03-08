@@ -33,35 +33,8 @@
   
 ?>
 
+<?php include 'partials/header.php' //PHP header CODE?>
 
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
-  <body>
-  <nav class="navbar bg-primary navbar-expand-lg " data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
     <?php
 
    //CONSTANT AND VARIABLES
@@ -123,15 +96,17 @@
 
   <div class="container mt-5">
     <!--SESSION AND COOKIES-->
-    <div class="card w-100 text-center" style="width: 18rem;">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Session ID: <b><?php echo session_id() ?></b></li>
-        <li class="list-group-item">You have entered <b><?php echo $_SESSION['counter'] ?></b> times in this website</li>
-        <li class="list-group-item">Cookie name is : <b><?php echo $_COOKIE['name'] ?></b></li>
-      </ul>
+    <div class="container">
+      <div class="card text-center" style="width: 50%; margin: 0 auto;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Session ID: <b><?php echo session_id() ?></b></li>
+          <li class="list-group-item">You have entered <b><?php echo $_SESSION['counter'] ?></b> times in this website</li>
+          <li class="list-group-item">Cookie name is : <b><?php echo $_COOKIE['name'] ?></b></li>
+        </ul>
+      </div>
     </div>
     <!--FORM-->
-    <form class="needs-validation" action="" method="post" novalidate> <!-- post method added -->
+    <form class="needs-validation mt-5" action="" method="post" novalidate> <!-- post method added -->
       <div class="row">
         <div class="col">
           <label for="username" class="form-label">Username</label>
@@ -191,7 +166,7 @@
       </div>
       <div class="row-auto">
         <button type="submit"
-                class="btn btn-primary">Register</button>
+                class="btn btn-primary mt-2">Register</button>
       </div>
     </form>
     <!--FILE INPUT-->
