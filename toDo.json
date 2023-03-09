@@ -1,20 +1,14 @@
 {
-    "rober": {
+    "Have a lovely day": {
+        "completed": true
+    },
+    "Do shopping": {
         "completed": false
     },
-    "Pepe": {
+    "2": {
         "completed": false
     },
-    "23": {
-        "completed": false
-    },
-    "454": {
-        "completed": false
-    },
-    "ssf": {
-        "completed": false
-    },
-    "Carlos": {
+    "12": {
         "completed": false
     }
 }

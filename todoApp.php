@@ -1,13 +1,13 @@
 <?php include './partials/header.php'; //PHP header CODE
 
 
-if(file_exists('toDo.json')){
-  $jsonData = file_get_contents("toDo.json");
-  $data = json_decode($jsonData, true);
-}else{?>
-  <div class="alert alert-primary" role="alert">
-      There is no tasks recorded
-  </div>
+  if(file_exists('toDo.json')){
+    $jsonData = file_get_contents("toDo.json");
+    $data = json_decode($jsonData, true);
+  }else{?>
+    <div class="alert alert-primary" role="alert">
+        There is no tasks recorded
+    </div>
 <?php } ?>
 
 
@@ -30,13 +30,20 @@ if(file_exists('toDo.json')){
   <div class="list-group text-center">
     <?php
     foreach ($data as $key => $value): ?>
-        <div class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
-          <a class=""><?php echo $key ?></a>
+        <div class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" style="cursor:pointer;">
+          <form class="form-check form-switch" method="post" action="taskStatus.php">
+            <input class="form-check-input" 
+                   type="checkbox"
+                   name="taskStatus" 
+                   <?php echo $value['completed'] ? 'checked' : '' ?>
+            />
+          </form>
+          <a class=<?php echo $value['completed'] ? 'text-decoration-line-through' : 'text-decoration-none' ?> style="color: var(--bs-list-group-color);"><?php echo $key ?></a>
           <form class="row g-3" action="deletePost.php" method="post" novalidate>
             <input
               type="text"
               name="nameTaskDelete"
-              value= <?php echo $key ?>
+              value= <?php echo urlencode($key) ?>
               hidden  
             />
             <div class="col-auto">
