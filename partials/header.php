@@ -18,7 +18,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link" aria-current="page" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="form.php">Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="submitFile.php">Submit File</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="todoApp.php">To Do App</a>
@@ -27,3 +33,14 @@
       </div>
     </div>
   </nav>
+    <?php
+    //To export files with functions for example we use "require"
+    //We use require once to avoid conflicts
+    // require_once 'functions.php' I CAN USE FUNCTIONS IN THIS FILE
+    ?>
+  <!-- <div class="container mt-5 text-center">
+    <pre>
+      include : If error, the rest of the code is executed.
+      require : If error exporting, any code is executed.
+    </pre>
+  </div> -->
