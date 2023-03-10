@@ -2,7 +2,6 @@
 
 $taskName = $_POST['taskName'];
 $taskName = str_replace('+', ' ', $taskName);
-echo $taskName;
 
 $jsonD = file_get_contents('toDo.json');
 $dats = json_decode($jsonD, true);
