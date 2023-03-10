@@ -1,8 +1,7 @@
 <?php
 
 $postData= $_POST['nameTask'] ?? false;
-$che = $_POST['checkTask'];
-echo $che;
+
 if($postData){
   $fileName = 'toDo.json';
   $jsonD = file_get_contents('toDo.json');
@@ -11,6 +10,6 @@ if($postData){
   file_put_contents('toDo.json', json_encode($dats, JSON_PRETTY_PRINT));
 }
 
-// header('Location: todoApp.php');
+header('Location: todoApp.php');
 
 ?>
