@@ -27,7 +27,10 @@
             <a class="nav-link" href="submitFile.php">Submit File</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="todoApp.php">To Do App</a>
+            <a class="nav-link" href="todoApp.php">To Do App ( JSON )</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="todoAppSql.php">To Do App ( MySQL )</a>
           </li>
         </ul>
       </div>
