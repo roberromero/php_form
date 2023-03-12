@@ -1,12 +1,13 @@
-<?php include './partials/header.php'; //PHP header CODE
+<?php
+
+
+include './partials/header.php'; //PHP header CODE
 
 require_once 'dbConnect.php';
 
-$newPdo = new connPdo();
-$newPdo->connDb();
-echo '<pre>';
-var_dump($newPdo);
-echo '</pre>';
+$connection = new Connection;
+$notes = $connection->getNotes();
+
 ?>
 
 <div class="container mt-4 d-flex">
@@ -25,15 +26,16 @@ echo '</pre>';
   <!--CARDS-->
   <div class="container">
 
+  <?php foreach($notes as $note): ?>
     <div class="card mb-2" style="width: 18rem;">
      <div class="card-body">
         <button type="button" class="btn-close" aria-label="Close" style="right: 0; margin: -10px 5px; position:absolute;"></button>
-        <h5 class="card-title">Note title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">date</a>
+        <h5 class="card-title"> <?php echo $note['title'] ?> </h5>
+        <p class="card-text"><?php echo $note['description'] ?></p>
+        <a href="#" class="card-link"><?php echo $note['create_date'] ?></a>
       </div>
     </div>
-
+  <?php endforeach; ?>
 
   </div>
 </div>
